@@ -1,0 +1,20 @@
+<h1>
+    Búsqueda: <small>{{ cadenaBusqueda }}</small>
+  </h1>
+  <hr />
+  
+  <div class="row animated fadeIn fast" *ngIf="heroes.length === 0">
+    <div class="cold-md-12">
+      <div role="alert" class="alert alert-info">
+        No existen resultados con el término: {{ cadenaBusqueda }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-columns">
+    <app-heroe-tarjeta
+      *ngFor="let heroe of heroes"
+      [heroe]="heroe"
+    ></app-heroe-tarjeta>
+  </div>
+  
